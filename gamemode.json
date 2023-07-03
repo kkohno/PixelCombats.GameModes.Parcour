@@ -1,6 +1,6 @@
 {
   "Name": "Parcour",
-  "Description": "Командный дэд матч на 2 команды",
+  "Description": "Паркур с точками сохранения. Кто первый прошел, тот и выиграл.",
   "StartClientVersion": 357,
   "MapFilter": {
     "HasParcourEnd": true
