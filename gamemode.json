@@ -1,0 +1,27 @@
+{
+  "Name": "Parcour",
+  "Description": "Командный дэд матч на 2 команды",
+  "StartClientVersion": 357,
+  "MapFilter": {
+    "HasParcourEnd": true
+  },
+  "MapLists": [
+    {
+      "MapListId": 324
+    }
+  ],
+  "Parameters": {
+    "Bool": [
+      {
+        "Name": "ViewEnd",
+        "DisplayName": "GmParams/ViewEnd",
+        "Default": true
+      },
+      {
+        "Name": "ViewSpawns",
+        "DisplayName": "GmParams/ViewSpawns",
+        "Default": true
+      }
+    ]
+  }
+}
