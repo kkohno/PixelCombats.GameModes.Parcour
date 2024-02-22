@@ -142,7 +142,7 @@ room.Spawns.OnSpawn.Add(function (player) {
 });
 
 // инициализация всего что зависит от карты
-Map.OnLoad.Add(InitializeMap);
+room.Map.OnLoad.Add(InitializeMap);
 function InitializeMap() {
 	endAreas = room.AreaService.GetByTag(EndAreaTag);
 	spawnAreas = room.AreaService.GetByTag(SpawnAreasTag);
