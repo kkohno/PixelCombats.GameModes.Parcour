@@ -19,8 +19,8 @@ const LeaderBoardProp = "Leader"; // свойство для лидерборд�
 
 // постоянные переменные
 const mainTimer = room.Timers.GetContext().Get("Main"); 		// таймер конца игры
-const endAreas = room.AreaService.GetByTag(EndAreaTag);		// зоны конца игры
-const spawnAreas = room.AreaService.GetByTag(SpawnAreasTag);	// зоны спавнов
+var endAreas = room.AreaService.GetByTag(EndAreaTag);		// зоны конца игры
+var spawnAreas = room.AreaService.GetByTag(SpawnAreasTag);	// зоны спавнов
 const stateProp = room.Properties.GetContext().Get("State");	// свойство состояния
 const inventory = room.Inventory.GetContext();				// контекст инвентаря
 const gnmeEndAreaColor = new Color(0, 0, 1, 0);	// цвет зоны конца маршрута
@@ -144,8 +144,8 @@ room.Spawns.OnSpawn.Add(function (player) {
 // инициализация всего что зависит от карты
 room.Map.OnLoad.Add(InitializeMap);
 function InitializeMap() {
-	const endAreas = room.AreaService.GetByTag(EndAreaTag);
-	const spawnAreas = room.AreaService.GetByTag(SpawnAreasTag);
+	endAreas = room.AreaService.GetByTag(EndAreaTag);
+	spawnAreas = room.AreaService.GetByTag(SpawnAreasTag);
 	//log.debug("spawnAreas.length=" + spawnAreas.length);
 	// ограничитель
 	if (spawnAreas == null || spawnAreas.length == 0) return;
