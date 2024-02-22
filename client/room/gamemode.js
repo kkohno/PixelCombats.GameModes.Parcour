@@ -144,8 +144,8 @@ room.Spawns.OnSpawn.Add(function (player) {
 // инициализация всего что зависит от карты
 room.Map.OnLoad.Add(InitializeMap);
 function InitializeMap() {
-	endAreas = room.AreaService.GetByTag(EndAreaTag);
-	spawnAreas = room.AreaService.GetByTag(SpawnAreasTag);
+	const endAreas = room.AreaService.GetByTag(EndAreaTag);
+	const spawnAreas = room.AreaService.GetByTag(SpawnAreasTag);
 	//log.debug("spawnAreas.length=" + spawnAreas.length);
 	// ограничитель
 	if (spawnAreas == null || spawnAreas.length == 0) return;
