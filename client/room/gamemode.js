@@ -107,7 +107,7 @@ spawnTrigger.OnEnter.Add(function (player, area) {
 		if (spawnAreas[i] == area) {
 			if (curSpawn.Value == null || i > curSpawn.Value) {
 				curSpawn.Value = i;
-				++leaderBoardProp.Value;
+				leaderBoardProp.Value += 1;
 			}
 			break;
 		}
