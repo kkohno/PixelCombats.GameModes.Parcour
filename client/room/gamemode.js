@@ -101,7 +101,9 @@ spawnTrigger.OnEnter.Add(function (player, area) {
 	if (spawnAreas == null || spawnAreas.length == 0) return;
 	const curSpawn = player.Properties.Get(CurSpawnPropName);
 	const leaderBoardProp = player.Properties.Get(LeaderBoardProp);
-	for (var i = curSpawn.Value != null ? curSpawn.Value : 0; i < spawnAreas.length; ++i) {
+	var i = 0;
+	if (curSpawn.Value != null) i = curSpawn.Value;
+	for (; i < spawnAreas.length; ++i) {
 		if (spawnAreas[i] == area) {
 			if (curSpawn.Value == null || i > curSpawn.Value) {
 				curSpawn.Value = i;
