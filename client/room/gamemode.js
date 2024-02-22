@@ -23,6 +23,8 @@ const endAreas = room.AreaService.GetByTag(EndAreaTag);		// зоны конца 
 const spawnAreas = room.AreaService.GetByTag(SpawnAreasTag);	// зоны спавнов
 const stateProp = room.Properties.GetContext().Get("State");	// свойство состояния
 const inventory = room.Inventory.GetContext();				// контекст инвентаря
+const gnmeEndAreaColor = new Color(0, 0, 1, 0);	// цвет зоны конца маршрута
+const areaColor = new Color(1, 1, 1, 0);	// цвет зоны
 
 // параметры режима
 room.Properties.GetContext().GameModeName.Value = "GameModes/Parcour";
@@ -67,7 +69,7 @@ function OnState() {
 // визуализируем конец маршрута
 if (room.GameMode.Parameters.GetBool(ViewEndParameterName)) {
 	var endView = room.AreaViewService.GetContext().Get("EndView");
-	endView.Color = { b: 1 };
+	endView.Color = gnmeEndAreaColor;
 	endView.Tags = [EndAreaTag];
 	endView.Enable = true;
 }
@@ -75,7 +77,7 @@ if (room.GameMode.Parameters.GetBool(ViewEndParameterName)) {
 // визуализируем промежуточные спавны маршрута
 if (room.GameMode.Parameters.GetBool(ViewSpawnsParameterName)) {
 	var spawnsView = room.AreaViewService.GetContext().Get("SpawnsView");
-	spawnsView.Color = { r: 1, g: 1, b: 1 };
+	spawnsView.Color = areaColor;
 	spawnsView.Tags = [SpawnAreasTag];
 	spawnsView.Enable = true;
 }
