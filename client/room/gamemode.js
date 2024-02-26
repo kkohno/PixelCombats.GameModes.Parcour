@@ -187,7 +187,8 @@ function SetPlayerSpawn(player, index) {
 	var spawnsCount = 0;
 	for (var x = range.Start.x; x < range.End.x; x += 2)
 		for (var z = range.Start.z; z < range.End.z; z += 2) {
-			spawns.CustomSpawnPoints.Add(x, range.Start.y, z, Spawns.GetSpawnRotation(x, z, lookPoint.x, lookPoint.z));
+			const spawns = room.Spawns.GetContext(player);
+			spawns.CustomSpawnPoints.Add(x, range.Start.y, z, spawns.GetSpawnRotation(x, z, lookPoint.x, lookPoint.z));
 			++spawnsCount;
 			if (spawnsCount > MaxSpawnsByArea) return;
 		}
