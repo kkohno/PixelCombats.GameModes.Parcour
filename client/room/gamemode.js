@@ -97,6 +97,7 @@ const spawnTrigger = room.AreaPlayerTriggerService.Get("SpawnTrigger");
 spawnTrigger.Tags = [SpawnAreasTag];
 spawnTrigger.Enable = true;
 spawnTrigger.OnEnter.Add(function (player, area) {
+	log(1);
 	if (spawnAreas == null || spawnAreas.length == 0) InitializeMap(); // todo костыль изза бага (не всегда прогружает нормально)	
 	if (spawnAreas == null || spawnAreas.length == 0) return;
 	const curSpawn = player.Properties.Get(CurSpawnPropName);
