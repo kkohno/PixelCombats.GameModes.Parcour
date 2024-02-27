@@ -1,4 +1,5 @@
 //var System = importNamespace('System');
+import * as basic from 'pixel_combats/basic';
 import * as room from 'pixel_combats/room';
 import * as teams from './default_teams.js';
 
@@ -23,8 +24,8 @@ var endAreas = room.AreaService.GetByTag(EndAreaTag);		// зоны конца и
 var spawnAreas = room.AreaService.GetByTag(SpawnAreasTag);	// зоны спавнов
 const stateProp = room.Properties.GetContext().Get("State");	// свойство состояния
 const inventory = room.Inventory.GetContext();				// контекст инвентаря
-const gnmeEndAreaColor = new Color(0, 0, 1, 0);	// цвет зоны конца маршрута
-const areaColor = new Color(1, 1, 1, 0);	// цвет зоны
+const gnmeEndAreaColor = new basic.Color(0, 0, 1, 0);	// цвет зоны конца маршрута
+const areaColor = new basic.Color(1, 1, 1, 0);	// цвет зоны
 
 // параметры режима
 room.Properties.GetContext().GameModeName.Value = "GameModes/Parcour";
@@ -119,11 +120,11 @@ mainTimer.OnTimer.Add(function () { Game.RestartGame(); });
 
 // создаем лидерборд
 room.LeaderBoard.PlayerLeaderBoardValues = [
-	new DisplayValueHeader("Deaths", "Statistics/Deaths", "Statistics/DeathsShort"),
-	new DisplayValueHeader(LeaderBoardProp, "Statistics/Scores", "Statistics/ScoresShort")
+	new basic.DisplayValueHeader("Deaths", "Statistics/Deaths", "Statistics/DeathsShort"),
+	new basic.DisplayValueHeader(LeaderBoardProp, "Statistics/Scores", "Statistics/ScoresShort")
 ];
 // сортировка команд
-room.LeaderBoard.TeamLeaderBoardValue = new DisplayValueHeader(LeaderBoardProp, "Statistics\Scores", "Statistics\Scores");
+room.LeaderBoard.TeamLeaderBoardValue = new basic.DisplayValueHeader(LeaderBoardProp, "Statistics\Scores", "Statistics\Scores");
 // сортировка игроков
 room.LeaderBoard.PlayersWeightGetter.Set(function (player) {
 	return player.Properties.Get(LeaderBoardProp).Value;
