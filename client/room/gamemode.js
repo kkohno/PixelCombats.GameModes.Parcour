@@ -120,11 +120,23 @@ mainTimer.OnTimer.Add(function () { Game.RestartGame(); });
 
 // создаем лидерборд
 room.LeaderBoard.PlayerLeaderBoardValues = [
-	new basic.DisplayValueHeader("Deaths", "Statistics/Deaths", "Statistics/DeathsShort"),
-	new basic.DisplayValueHeader(LeaderBoardProp, "Statistics/Scores", "Statistics/ScoresShort")
+	{
+		Value: "Deaths",
+		DisplayName: "Statistics/Deaths",
+		ShortDisplayName: "Statistics/DeathsShort"
+	},
+	{
+		Value: LeaderBoardProp,
+		DisplayName: "Statistics/Scores",
+		ShortDisplayName: "Statistics/ScoresShort"
+	}
 ];
 // сортировка команд
-room.LeaderBoard.TeamLeaderBoardValue = new basic.DisplayValueHeader(LeaderBoardProp, "Statistics\Scores", "Statistics\Scores");
+room.LeaderBoard.TeamLeaderBoardValue = {
+	Value: LeaderBoardProp,
+	DisplayName: "Statistics/Scores",
+	ShortDisplayName: "Statistics/Scores"
+};
 // сортировка игроков
 room.LeaderBoard.PlayersWeightGetter.Set(function (player) {
 	return player.Properties.Get(LeaderBoardProp).Value;
