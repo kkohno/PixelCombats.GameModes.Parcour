@@ -116,7 +116,7 @@ spawnTrigger.OnEnter.Add(function (player, area) {
 });
 
 // настраиваем таймер конца игры
-mainTimer.OnTimer.Add(function () { Game.RestartGame(); });
+mainTimer.OnTimer.Add(function () { room.Game.RestartGame(); });
 
 // создаем лидерборд
 room.LeaderBoard.PlayerLeaderBoardValues = [
