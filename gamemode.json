@@ -7,12 +7,15 @@
   },
   "MapLists": [
     {
+      "Name": "НОРМАЛЬНАЯ СЛОЖНОСТЬ",
       "MapListId": 19045
     },
     {
+      "Name": "ЛЕГКО",
       "MapListId": 19044
     },
     {
+      "Name": "СЛОЖНО",
       "MapListId": 19046
     },
     {
